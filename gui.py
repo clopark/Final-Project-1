@@ -62,6 +62,7 @@ class GUI:
                 self.text_fnf.place_forget()
                 self.text_blank.place(x=200, y=200, anchor='center')
             elif os.path.isfile('files/' + output_file) is False or output_file == 'data.txt':
+                self.text_blank.place_forget()
                 self.text_fnf.place(x=200, y=200, anchor='center')
             else:
                 if os.path.isfile('files/' + output_file):
@@ -86,6 +87,7 @@ class GUI:
                         new_output_file = self.entry_new_output_file.get().strip()
                         if len(new_output_file) == 0:
                             self.text_stored.place_forget()
+                            self.text_fnf.place_forget()
                             self.text_new_output.place(x=200, y=200, anchor='center')
                         else:
                             output_file = self.entry_new_output_file.get().strip()
@@ -132,6 +134,8 @@ class GUI:
 
                 self.text_stored.place(x=200, y=200, anchor='center')
                 self.text_new_output.place_forget()
+                self.text_fnf.place_forget()
+                self.text_blank.place_forget()
 
 
     def clear(self):
